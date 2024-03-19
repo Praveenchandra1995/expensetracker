@@ -1,17 +1,21 @@
+import { Link, Outlet } from "react-router-dom";
+
 const Body = () => {
   return (
     <div className="container-fluid" id="menu-content">
       <div className="navbar bg-dark">
         <div className="nav">
-          <li className="nav-item">
-            <a className="nav-link" href=" ">
-              Expenses
-            </a>
-          </li>
+          <Link to="/expenses">
+            <li className="nav-item">
+              <a className="nav-link" href=" ">
+                Expenses
+              </a>
+            </li>
+          </Link>
         </div>
       </div>
       <div className="content" id="content">
-        <h2>Hello</h2>
+        <Outlet />
       </div>
     </div>
   );

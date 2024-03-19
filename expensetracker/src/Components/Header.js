@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <div className="container-fluid">
@@ -18,16 +20,20 @@ const Header = () => {
                   Home
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href=" ">
-                  Approve Expenses
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href=" ">
-                  Submit Expenses
-                </a>
-              </li>
+              <Link to="/approveexpense">
+                <li class="nav-item">
+                  <a class="nav-link" href=" ">
+                    Approve Expenses
+                  </a>
+                </li>
+              </Link>
+              <Link to="submitexpense">
+                <li class="nav-item">
+                  <a class="nav-link" href=" ">
+                    Submit Expenses
+                  </a>
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
