@@ -10,7 +10,7 @@ const Header = () => {
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <h2 class="navbar-brand">Shopper.</h2>
+          <h2 class="navbar-brand">Expense Tracker</h2>
           <div class="navbar-collapse collapse" id="navbars">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">

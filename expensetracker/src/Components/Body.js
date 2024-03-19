@@ -1,7 +1,7 @@
 const Body = () => {
   return (
     <div className="container-fluid" id="menu-content">
-      <div className="navbar">
+      <div className="navbar bg-dark">
         <div className="nav">
           <li className="nav-item">
             <a className="nav-link" href=" ">
@@ -10,7 +10,7 @@ const Body = () => {
           </li>
         </div>
       </div>
-      <div className="content">
+      <div className="content" id="content">
         <h2>Hello</h2>
       </div>
     </div>
