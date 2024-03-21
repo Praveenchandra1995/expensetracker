@@ -1,8 +1,4 @@
 const Form = () => {
-  return (
-    <div className="container-fluid">
-      <h2>Hello everyone</h2>
-    </div>
-  );
+  return <div className="container-fluid"></div>;
 };
 export default Form;
