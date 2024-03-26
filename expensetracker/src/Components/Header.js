@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -20,20 +19,16 @@ const Header = () => {
                   Home
                 </a>
               </li>
-              <Link to="/approveexpense">
               <li class="nav-item">
                 <a class="nav-link" href=" ">
                   Approve Expenses
                 </a>
               </li>
-              </Link>
-              <Link to="/submitedexpense">
               <li class="nav-item">
                 <a class="nav-link" href=" ">
                   Submit Expenses
                 </a>
               </li>
-              </Link>
             </ul>
           </div>
         </div>
