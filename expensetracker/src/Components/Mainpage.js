@@ -1,4 +1,9 @@
+// Mainpage.js
 import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import Expense from "./Expense";
+import Approveexpense from "./Approveexpense";
+import SubmitedExpense from "./SubmitedExpense";
 
 function Mainpage() {
   return (
@@ -7,19 +12,25 @@ function Mainpage() {
         <nav>
           <ul>
             <li className="nav-item text-white fw-bold align-items-center pb-3">
-              <a href=" " className="nav-link">
+              <Link to="/home" className="nav-link">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item text-white fw-bold align-items-center">
-              <a href=" " className="nav-link">
+              <Link to="/expenseentry" className="nav-link">
                 Expenses Entry
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
       </div>
-      <div className="content">hello</div>
+      <div className="content">
+        <Routes>
+          <Route path="/expenseentry" element={<Expense />} />
+          <Route path="/approveexpense" element={<Approveexpense />} />
+          <Route path="/submitedexpense" element={<SubmitedExpense />} />
+        </Routes>
+      </div>
     </div>
   );
 }
