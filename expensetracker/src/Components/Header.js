@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="container-fluid">
@@ -19,16 +19,20 @@ const Header = () => {
                   Home
                 </a>
               </li>
+              <Link to="/approveexpense">
               <li class="nav-item">
                 <a class="nav-link" href=" ">
-                  Approve Expenses
+                  Approved Expenses
                 </a>
               </li>
+              </Link>
+              <Link to="/submitexpense">
               <li class="nav-item">
                 <a class="nav-link" href=" ">
-                  Submit Expenses
+                  Submited Expenses
                 </a>
               </li>
+              </Link>
             </ul>
           </div>
         </div>

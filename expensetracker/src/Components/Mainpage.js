@@ -1,4 +1,10 @@
 import React from "react";
+import { Routes,Route, Link } from "react-router-dom";
+import Expense from "./Expense";
+import Home from "../Components/home";
+import Approveexpense from "./Approveexpense";
+import SubmitedExpense from "./SubmitedExpense";
+
 function Mainpage() {
   return (
     <div className="container-fluid" id="mainpage">
@@ -12,20 +18,29 @@ function Mainpage() {
           </button>
           <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0  text-white fw-bold">
+             <Link to="home">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href=" ">Home</a>
               </li>
+              </Link>
+              <Link to="expenseentry">
               <li class="nav-item">
                 <a class="nav-link" href=" ">Entry Expense</a>
               </li>
+              </Link>
             </ul>
           </div>
         </div>
       </nav>
     </div>
-  
     <div className="content">
-      hello
+      <Routes>
+      <Route path="/home" element={<Home/>}/>
+
+      <Route path="/expenseentry" element={<Expense/>}/>
+      <Route path="/approveexpense" element={<Approveexpense/>}/>
+      <Route path="/submitexpense" element={<SubmitedExpense/>}/>
+      </Routes>
     </div>
   </div>
   
