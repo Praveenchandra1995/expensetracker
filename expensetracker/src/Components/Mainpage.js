@@ -1,9 +1,9 @@
 import React from "react";
 import { Routes,Route, Link } from "react-router-dom";
-import Expense from "./Expense";
 import Home from "../Components/home";
 import Approveexpense from "./Approveexpense";
 import SubmitedExpense from "./SubmitedExpense";
+import Form from "./Form";
 
 function Mainpage() {
   return (
@@ -37,7 +37,7 @@ function Mainpage() {
       <Routes>
       <Route path="/home" element={<Home/>}/>
 
-      <Route path="/expenseentry" element={<Expense/>}/>
+      <Route path="/expenseentry" element={<Form/>}/>
       <Route path="/approveexpense" element={<Approveexpense/>}/>
       <Route path="/submitexpense" element={<SubmitedExpense/>}/>
       </Routes>
