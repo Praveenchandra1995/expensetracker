@@ -7,5 +7,4 @@ function SubmitedExpense() {
     </div>
   )
 }
-
 export default SubmitedExpense
