@@ -8,16 +8,16 @@ import SubmitedExpense from "./SubmitedExpense";
 function Mainpage() {
   return (
     <div className="container-fluid" id="mainpage">
-    <div className=" sidebar pe-3 pt-3 h-100 w-25 mt-0" id="sidebar">
+    <div className=" sidebar pe-3 pt-3 h-100 w-25 " id="sidebar">
       <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-        <div class="container-fluid">
+        <div class="container-fluid d-flex flex-column">
 <img src="/Images/expense.png" width="80px" height="60px" alt="img" className="rounded rounded-1 rounded-circle"/>
 <h2 className="fw-bold fs-4">Expenses</h2>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="bi bi-card-list"></span>
           </button>
           <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0  text-white fw-bold">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0  text-white fw-bold d-flex flex-column">
              <Link to="home">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href=" ">Home</a>
