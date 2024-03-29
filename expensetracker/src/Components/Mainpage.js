@@ -36,7 +36,6 @@ function Mainpage() {
     <div className="content">
       <Routes>
       <Route path="/home" element={<Home/>}/>
-
       <Route path="/expenseentry" element={<Form/>}/>
       <Route path="/approveexpense" element={<Approveexpense/>}/>
       <Route path="/submitexpense" element={<SubmitedExpense/>}/>
