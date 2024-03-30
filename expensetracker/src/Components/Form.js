@@ -17,6 +17,7 @@ function Form() {
 
   const handleSubmit=(event)=>{
     event.preventDefault();
+    //console.log("Form Data To Submit:",formData);
     dispatch({type:"On_Submit",payload:formData});
     setFormData({
     salutation: "",
@@ -45,7 +46,7 @@ setFormData({
 });
 
   }
-  console.log(formData)
+  //console.log(formData)
   return(
   
   <div className="container-fluid">
@@ -83,10 +84,10 @@ value={formData.salutation}
   </select>
   {formData.expenseType === "Travel" && (
             <div className="d-flex flex-column m-2">  
-              <label htmlFor="Amount">From Place:</label>
-              <input type="text" name="amounts" className="form-control w-50 ms-2" value={formData.fromPlace} onChange={handleInputChange}/>
-              <label htmlFor="Amount">To Place:</label>
-              <input type="text" name="amounts" className="form-control w-50 ms-2" value={formData.toPlace} onChange={handleInputChange}/>
+              <label htmlFor="Place">From Place:</label>
+              <input type="text" name="fromPlace" className="form-control w-50 ms-2" value={formData.fromPlace} onChange={handleInputChange}/>
+              <label htmlFor="Place2">To Place:</label>
+              <input type="text" name="toPlace" className="form-control w-50 ms-2" value={formData.toPlace} onChange={handleInputChange}/>
             </div>
           )}
   </div>

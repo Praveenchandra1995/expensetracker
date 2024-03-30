@@ -1,13 +1,26 @@
 
 const InitialState = {
-    expenseType: [],
+    expenses: [],
 };
 const FormReducer = (state = InitialState, action) => {
+    debugger
+    ;
+
     switch (action.type) {
         case "On_Submit":
+            const { salutation, name, date, expenseType, fromPlace, toPlace, amount } = action.payload;
+            const newExpense = {
+                salutation,
+                name,
+                date,
+                expenseType,
+                fromPlace,
+                toPlace,
+                amount,
+            };
             return {
                 ...state,
-                expenseType: [...state.expenseType, action.payload]
+                expenses: [...state.expenses, newExpense],
             };
         default:
             return state;
