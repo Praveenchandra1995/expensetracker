@@ -25,8 +25,8 @@ console.log(expensesoftypes);
   <td>{info.expenseType}</td>
   <td>{info.date}</td>
   <td>{info.amount}</td>
-  <td><button className='btn btn-dark rounded rounded-1 rounded-end fw-bold bg-primary'>Approval</button> </td>
-  <td><button className='btn btn-dark rounded rounded-1 rounded-end fw-bold bg-primary'>Reject</button>  </td>
+  <td><span className='btn btn-dark rounded rounded-1 rounded-end fw-bold bg-primary'>Approval</span> </td>
+  <td><span className='btn btn-dark rounded rounded-1 rounded-end fw-bold bg-primary'>Reject</span>  </td>
   <td> </td>
 </tr>
   </tbody>
