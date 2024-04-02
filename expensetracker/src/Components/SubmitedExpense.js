@@ -14,6 +14,8 @@ const totalAmount=expenses.reduce((total,expense)=>total+parseFloat(expense.amou
           <th className='ps-4 pe-4'>Date:</th>
           <th className='ps-4 pe-4'>ExpenseType:</th>
           <th className='ps-4 pe-4'>Amount:</th>
+          <th className='ps-4 pe-4'>File:</th>
+
           {expenses.expenseType==="Travel"&&(
             <th className='ps-4 pe-4'>FromPlace:</th>,
             <th className='ps-4 pe-4'>ToPlace:</th>
@@ -28,6 +30,16 @@ const totalAmount=expenses.reduce((total,expense)=>total+parseFloat(expense.amou
                   <td className=''>{input.date}</td>
                   <td className=''>{input.expenseType}</td>
                   <td className=''>{input.amount}</td>
+                  <td>
+                {input.file ? (
+                  <a href={URL.createObjectURL(input.file)} download={input.file.name}>
+                    {input.file.name}
+                  </a>
+                ) : (
+                  "No File"
+                )}
+              </td>
+
                 </tr>
                 {expenses.expenseType==="Travel"&&(
             <tr>

@@ -8,7 +8,7 @@ const FormReducer = (state = InitialState, action) => {
 
     switch (action.type) {
         case "On_Submit":
-            const { salutation, name, date, expenseType, fromPlace, toPlace, amount } = action.payload;
+            const { salutation, name, date, expenseType, fromPlace, toPlace, amount,file } = action.payload;
             const newExpense = {
                 salutation,
                 name,
@@ -17,6 +17,7 @@ const FormReducer = (state = InitialState, action) => {
                 fromPlace,
                 toPlace,
                 amount,
+                file,
             };
             return {
                 ...state,

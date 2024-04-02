@@ -10,6 +10,7 @@ function Form() {
     fromPlace: "",
     toPlace: "",
     amount: "",
+    file:null,
   });
 
   const dispatch = useDispatch();
@@ -25,14 +26,15 @@ function Form() {
       fromPlace: "",
       toPlace: "",
       amount: "",
+      file:null,
     });
   };
 
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value,files } = event.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]:name=== "file"?files[0]:value,
     });
   };
 
@@ -116,6 +118,8 @@ function Form() {
               value={formData.amount}
               onChange={handleInputChange}
             />
+            <label for="file" className="pe-2 ps-2 ">FileUpload:</label>
+            <input type="file" name="file" onChange={handleInputChange} />
           </div>
 
           <button className="form-submit btn btn-danger text-white fw-bold mt-2">
