@@ -14,11 +14,13 @@ const Header = () => {
           <h2 class="navbar-brand">Expense Tracker</h2>
           <div class="navbar-collapse collapse" id="navbars">
             <ul class="navbar-nav me-auto">
+              <Link to="/home">
               <li class="nav-item">
                 <a class="nav-link" href=" ">
                   Home
                 </a>
               </li>
+              </Link>
               <Link to="/approveexpense">
               <li class="nav-item">
                 <a class="nav-link" href=" ">
