@@ -1,8 +1,9 @@
 const ApprovalAuthority=[{
+    id:"1256",
     Name:"George",
     Designation:"Manager",
     Branch:"Hyderabad-106",
-    Password:8919516481,
+    Password:8819816421,
 
 
 },
@@ -10,7 +11,7 @@ const ApprovalAuthority=[{
     Name:"David",
     Designation:"GeneralManager",
     Branch:"Texas-106",
-    Password:9704127406,
+    Password:934167406,
 }]
 
 export default ApprovalAuthority;
