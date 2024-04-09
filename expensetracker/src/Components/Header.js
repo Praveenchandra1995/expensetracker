@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="container-fluid">
-      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark w-100">
         <div class="container-fluid">
           <button
             data-bs-toggle="collapse"
@@ -11,8 +11,8 @@ const Header = () => {
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <h2 class="navbar-brand">Expense Tracker</h2>
-          <div class="navbar-collapse collapse" id="navbars">
+          <h2 class="navbar-brand text-success">Expense Tracker</h2>
+          <div class="navbar-collapse collapse text-success" id="navbars">
             <ul class="navbar-nav me-auto">
               <Link to="/home">
               <li class="nav-item">
@@ -32,6 +32,13 @@ const Header = () => {
               <li class="nav-item">
                 <a class="nav-link" href=" ">
                   Submited Expenses
+                </a>
+              </li>
+              </Link>
+              <Link to="/rejectedexpense">
+              <li class="nav-item">
+                <a class="nav-link" href=" ">
+                  Rejected Expenses
                 </a>
               </li>
               </Link>

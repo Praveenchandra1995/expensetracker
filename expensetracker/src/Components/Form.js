@@ -51,7 +51,7 @@ function Form() {
     <div className="container-fluid">
       <form onSubmit={handleSubmit}>
 
-        <div className="w-100 h-auto p-3 border border-1 border-dark-subtle mt-2 d-flex flex-column justify-content-between p-4 rounded rounded-2 ">
+        <div className="w-100 h-auto border border-1 border-dark-subtle mt-2 d-flex flex-column justify-content-between p-2 rounded rounded-2 ">
         <h5 className="text text-primary fw-bold p-4">{alert}</h5>
 
           <div className="d-flex flex-row ms-2">
