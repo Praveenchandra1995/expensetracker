@@ -12,6 +12,7 @@ function Form() {
     toPlace: "",
     amount: "",
     file:null,
+    status:"",
   });
 
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function Form() {
       toPlace: "",
       amount: "",
       file:null,
+      status:"",
     });
   };
 
@@ -48,6 +50,7 @@ function Form() {
   return (
     <div className="container-fluid">
       <form onSubmit={handleSubmit}>
+
         <div className="w-100 h-auto p-3 border border-1 border-dark-subtle mt-2 d-flex flex-column justify-content-between p-4 rounded rounded-2 ">
         <h5 className="text text-primary fw-bold p-4">{alert}</h5>
 
@@ -57,6 +60,7 @@ function Form() {
               onChange={handleInputChange}
               value={formData.salutation}
               name="salutation"
+              required
             >
               <option value="Mr">Mr</option>
               <option value="Mrs">Mrs</option>
@@ -69,6 +73,7 @@ function Form() {
               className="form-control w-50"
               value={formData.name}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="d-flex flex-row m-2">
@@ -79,6 +84,7 @@ function Form() {
               className="form-control w-50"
               value={formData.date}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="d-flex flex-row m-2">
@@ -88,6 +94,7 @@ function Form() {
               onChange={handleInputChange}
               value={formData.expenseType}
               name="expenseType"
+              required
             >
               <option value="Stationary">Stationary</option>
               <option value="Travel">Travel</option>
@@ -104,6 +111,7 @@ function Form() {
                   className="form-control w-50 ms-2"
                   value={formData.fromPlace}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="d-flex flex-column m-2">
@@ -114,6 +122,7 @@ function Form() {
                   className="form-control w-50 ms-2"
                   value={formData.toPlace}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
             </div>
@@ -126,9 +135,10 @@ function Form() {
               className="form-control w-50 ms-2"
               value={formData.amount}
               onChange={handleInputChange}
+              required
             />
             <label for="file" className="pe-2 ps-2 ">FileUpload:</label>
-            <input type="file" name="file" onChange={handleInputChange} />
+            <input type="file" name="file" onChange={handleInputChange}  required/>
           </div>
 
           <button className="form-submit btn btn-danger text-white fw-bold mt-2">
