@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 function Form() {
+  const[alert,setalert]=useState("");
   const [formData, setFormData] = useState({
     salutation: "",
     name: "",
@@ -17,6 +18,12 @@ function Form() {
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
+    setalert("expense submitted")
+    setTimeout(() => {
+      setalert("")
+
+      
+    }, 3000);
     event.preventDefault();
     dispatch({ type: "On_Submit", payload: formData });
     setFormData({
@@ -43,7 +50,10 @@ function Form() {
   return (
     <div className="container-fluid">
       <form onSubmit={handleSubmit}>
+        <div className="w-100 h-auto p-3 border border-1 border-dark-subtle mt-2 d-flex flex-column justify-content-evenly">
         <div className="w-100 h-auto p-3 border border-1 border-dark-subtle mt-2 d-flex flex-column justify-content-between p-4 rounded rounded-2 ">
+        <h5 className="text text-primary fw-bold p-4">{alert}</h5>
+
           <div className="d-flex flex-row ms-2">
             <select
               className="form-select w-25"
