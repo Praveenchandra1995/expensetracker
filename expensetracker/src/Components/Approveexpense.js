@@ -18,7 +18,7 @@ function Approveexpense() {
   return (
     <div className='container-fluid '>
       {expensesoftypes.map((info) => (
-        <table className='table' key={info.id}>
+        <table className='table' >
           <thead className='text-center'>
             <tr>
               <th>Name:</th>
