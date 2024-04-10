@@ -1,7 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import ApprovalAuthority from "./Data/data";
 const Header = () => {
+  debugger;
   const[open,setOpen]=useState(false);
+  const [name,setName]=useState("");
+  const [password,setPassword]=useState("");
+const navigate=useNavigate()
+  const handleInputName=(e)=>{
+    setName(e.target.value);
+  }
+  const handleInputPassword=(e)=>{
+    setPassword(e.target.value)
+  }
   const handleOpen=(e)=>{
     e.preventDefault();
     e.stopPropagation();
@@ -10,7 +21,21 @@ const Header = () => {
   const handleClose=()=>{
     setOpen(false);
   }
-  return (
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log("Name:",name);
+    console.log("Password",password)
+    const isAuthorized = ApprovalAuthority.find((info) => info.Name === name && info.Password === password);
+  console.log("Is authorized:",isAuthorized)
+    if (isAuthorized) {
+      navigate("/approveexpense");
+      setOpen(false)
+
+    } else {
+      alert("Invalid Username and password");
+    }
+  };
+   return (
     <div className="container-fluid">
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark w-100">
         <div class="container-fluid">
@@ -24,13 +49,13 @@ const Header = () => {
           <h2 class="navbar-brand text-success">Expense Tracker</h2>
           <div class="navbar-collapse collapse text-success" id="navbars">
             <ul class="navbar-nav me-auto">
-              <Link to="/home">
               <li class="nav-item">
-                <a class="nav-link" href=" ">
+              <Link to="/home" className="nav-link">
+
                   Home
-                </a>
+                </Link>
+
               </li>
-              </Link>
               {/* <Link to="/approveexpense"> */}
               <li class="nav-item" onClick={handleOpen}>
                 <a class="nav-link" href=" ">
@@ -38,11 +63,10 @@ const Header = () => {
                 </a>
               </li>
               {/* </Link> */}
-              <Link to="/submitexpense">
               <li class="nav-item">
-                <a class="nav-link" href=" ">
+              <Link to="/submitexpense" className="nav-link">
                   Submited Expenses
-                </a>
+                </Link>
               </li>
               </Link>
               <Link to="/rejectedexpense">
@@ -59,7 +83,7 @@ const Header = () => {
       {open && (
         <div className="modal fade show" style={{ display: "block" }}>
           <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
+            <div className="modal-content bg-success">
               <div className="modal-header">
                 <h5 className="modal-title">Approved Expenses Login</h5>
                 <button
@@ -72,14 +96,14 @@ const Header = () => {
                 <form>
                   <div className="p-3 w-100 h-50 border border-1 rounded rounded-2 text-center m-3">
                    <div className="d-flex flex-row ">
-                    <label for="username" className="pe-2">UserName:</label>
-                    <input type="text" className="form-control form-field-hover w-50 pb-1 " name="username"/>
+                    <label for="username" className="pe-2 fw-bold">UserName:</label>
+                    <input type="text" className="form-control form-field-hover w-50 pb-1 " name="username" required value={name} onChange={handleInputName}/>
                     </div>
                     <div className="d-flex flex-row pt-2">
-                    <label for="password" className="pe-2">Password:</label>
-                    <input type="password" className="form-control form-field-hover w-50 pb-2" name="username"/>
+                    <label for="password" className="pe-2 fw-bold">Password:</label>
+                    <input type="password" className="form-control form-field-hover w-50 pb-2" name="username" required value={password} onChange={handleInputPassword}/>
                     </div>
-                    <button className="btn btn-danger align-items-center mt-2">Login</button>
+                    <button className="btn btn-danger align-items-center mt-2"  onClick={handleLogin}>Login</button>
                   </div>
                 </form>
               </div>
