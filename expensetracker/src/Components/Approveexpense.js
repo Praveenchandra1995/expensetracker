@@ -1,57 +1,40 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ApprovalAuthority from './Data/data';
-import { useDispatch } from 'react-redux';
 
 function Approveexpense(info) {
-  const dispatch=useDispatch();
-  // debugger;
-  const handleApprove=(expense)=>{
-    dispatch({type:"Approve_Exp",payload: expense})
-  
-  }
-
-  const expensesoftypes = useSelector((state) => state.form.expenses);
-  console.log(expensesoftypes);
-
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
-
-
+  const expensesoftypes = useSelector((state) => state.form.expenses);
   
-  
+  const handleApprove = (expense) => {
+    dispatch({ type: "Approve_Exp", payload: expense });
+  };
+
   const Approveexpenselevel = (id) => {
     const manager = ApprovalAuthority.find((data) => data.Designation === 'Manager');
     if (manager) {
       setShowModal(true);
     }
-  }
-// const ApproveByManager=()=>{
-//   const Manager=ApprovalAuthority.filter((data)=>data.Designation==="Manager");
-//   if(Manager){
-//     <div className='alert alert-primary alert-dismissible' role='alert'>
-//       <h5>Download the file and compare the detailes with approve expense detailes</h5>
-//     </div>
-//   }
-// }
+  };
 
   return (
-    <div className='container-fluid '>
-      {  expensesoftypes.map((info) => (
-        <table className='table' key={info.id}>
-          <thead className='text-center'>
-            <tr>
-              <th>Name:</th>
-              <th>ExpenseType:</th>
-              <th>Date:</th>
-              <th>Amount:</th>
-              <th>File</th>
-              <th>Approval</th>
-              {/* <th>Reject</th> */}
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
+    <div className='container-fluid'>
+      <table className='table w-100 h-100'>
+        <thead className='table-info text-secondary'>
+          <tr>
+            <th>Name:</th>
+            <th>ExpenseType:</th>
+            <th>Date:</th>
+            <th>Amount:</th>
+            <th>File</th>
+            <th>Approval</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {expensesoftypes.map((info) => (
+            <tr key={info.id}>
               <td>{info.name}</td>
               <td>{info.expenseType}</td>
               <td>{info.date}</td>
@@ -68,14 +51,11 @@ function Approveexpense(info) {
               <td>
                 <span className='btn btn-dark rounded rounded-1 rounded-end fw-bold bg-primary' onClick={Approveexpenselevel}>Approval</span>
               </td>
-              <td>
-                {/* <span className='btn btn-dark rounded rounded-1 rounded-end fw-bold bg-primary'>Reject</span> */}
-              </td>
-              <td>{info.status} </td>
+              <td>{info.status}</td>
             </tr>
-          </tbody>
-        </table>
-      ))}
+          ))}
+        </tbody>
+      </table>
 
       {showModal && (
         <div className='modal fade show' style={{ display: 'block' }}>
@@ -97,15 +77,10 @@ function Approveexpense(info) {
                   )
                 )}
               </div>
-              
               <div className='modal-footer'>
-                {/* {expensesoftypes.map((data,index)=>(
-                  <> */}
- <button className='btn btn-success' onClick={()=>handleApprove()}>Confirm</button>
- <button className='btn btn-success' >Reject</button>
- {/* </>
-                ))} */}
-               </div>
+                <button className='btn btn-success' onClick={() => handleApprove()}>Confirm</button>
+                <button className='btn btn-success'>Reject</button>
+              </div>
             </div>
           </div>
         </div>

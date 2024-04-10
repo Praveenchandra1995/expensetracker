@@ -4,11 +4,12 @@ import Home from "../Components/home";
 import Approveexpense from "./Approveexpense";
 import SubmitedExpense from "./SubmitedExpense";
 import Form from "./Form";
+import RejectedExpense from "./RejectedExpense";
 
 function Mainpage() {
   return (
     <div className="container-fluid" id="mainpage">
-    <div className=" sidebar pe-3 pt-3 h-100 w-25 " id="sidebar">
+    <div className="sidebar w-25 " id="sidebar">
       <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container-fluid d-flex flex-column">
 <img src="/Images/expense.png" width="80px" height="60px" alt="img" className="rounded rounded-1 rounded-circle"/>
@@ -39,6 +40,7 @@ function Mainpage() {
       <Route path="/expenseentry" element={<Form/>}/>
       <Route path="/approveexpense" element={<Approveexpense/>}/>
       <Route path="/submitexpense" element={<SubmitedExpense/>}/>
+      <Route path="/rejectedexpense" element={<RejectedExpense/>}/>
       </Routes>
     </div>
   </div>
